@@ -30,7 +30,7 @@ class TodoController extends Controller
     {
         $request->validate();
         try {
-        	Auth::user()->todos()->Create($request->all());
+        	Auth::user()->todos()->create($request->all());
         	return response()->json(['status' => 'success', 'msg' => 'Todo added successfully.']);
         } catch (Exception $e) {
         	return response()->json(['status' => 'fail', 'msg' => $e->getMessage()]);	
